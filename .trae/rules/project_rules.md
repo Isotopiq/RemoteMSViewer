@@ -1,0 +1,2 @@
+Make sure that when you make edits to the existing project files, please keep track of those changes so that if you need to revert back to a previous version, you can do so with ease. This is just to ensure that if your edits cause any issues, you can easily revert back to a previous version that is working.
+You can automatically edit code files directly to apply the suggestions you make.

@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.env.local
+*.log
+.git/
+.gitignore
+start_server.bat

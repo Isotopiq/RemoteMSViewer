@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Socket.IO Test</title>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+    <h1>Socket.IO Connection Test</h1>
+    <div id="status">Connecting...</div>
+    <div id="data"></div>
+    
+    <script>
+        const socket = io('http://localhost:5000', {
+            transports: ['websocket', 'polling']
+        });
+        
+        const statusDiv = document.getElementById('status');
+        const dataDiv = document.getElementById('data');
+        
+        socket.on('connect', () => {
+            console.log('Connected to server');
+            statusDiv.innerHTML = 'Connected to server';
+            statusDiv.style.color = 'green';
+        });
+        
+        socket.on('disconnect', () => {
+            console.log('Disconnected from server');
+            statusDiv.innerHTML = 'Disconnected from server';
+            statusDiv.style.color = 'red';
+        });
+        
+        socket.on('connect_error', (error) => {
+            console.error('Connection error:', error);
+            statusDiv.innerHTML = 'Connection error: ' + error;
+            statusDiv.style.color = 'red';
+        });
+        
+        socket.on('scan_data', (data) => {
+            console.log('Received scan data:', data);
+            const timestamp = new Date().toLocaleTimeString();
+            dataDiv.innerHTML = `
+                <h3>Latest Scan Data (${timestamp})</h3>
+                <p><strong>Scan Number:</strong> ${data.scan_number}</p>
+                <p><strong>Masses Length:</strong> ${data.masses ? data.masses.length : 'N/A'}</p>
+                <p><strong>Intensities Length:</strong> ${data.intensities ? data.intensities.length : 'N/A'}</p>
+                <p><strong>Centroid Count:</strong> ${data.centroid_count}</p>
+                <p><strong>Timestamp:</strong> ${data.timestamp}</p>
+                <pre>${JSON.stringify(data, null, 2)}</pre>
+            `;
+        });
+    </script>
+</body>
+</html>

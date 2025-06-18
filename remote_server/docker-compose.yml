@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  remote-server:
+    build: .
+    ports:
+      - "${PORT:-5163}:${PORT:-5163}"
+    environment:
+      - PORT=${PORT:-5163}
+      - API_KEY=${API_KEY:-}
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped

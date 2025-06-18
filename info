@@ -1,0 +1,10 @@
+[33mf6c128e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge pull request #46 from thermofisherlsms/advanced_console_application
+[33m6953f1f[m[33m ([m[1;31morigin/advanced_console_application[m[33m)[m Update the changelog.md file, and clean up the example code for AdvancedConsoleApplication under tribrid
+[33m6ad2287[m Update solution file and added new project AdvancedConsoleApplication
+[33m4c8c723[m Add Exploris 4.3 and higher libraries
+[33mfa58ef2[m Merge pull request #40 from SchweppeLab/master
+[33m273e506[m Merge pull request #1 from SchweppeLab/scan-handler
+[33mb76a767[m add scanhandler to tribrid examples
+[33m9078ec9[m Update Getting Started and README
+[33m65bb739[m Update license agreement FAQ
+[33mf458d02[m Add PDFs of slides, update docs
